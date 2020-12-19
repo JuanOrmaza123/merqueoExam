@@ -2,7 +2,9 @@
 
 namespace App\Entities\CashFlow;
 
+use App\Entities\Logs\Log;
 use Illuminate\Database\Eloquent\Model;
+use App\Entities\Payments\Payment;
 
 class CashFlow extends Model
 {
@@ -31,6 +33,15 @@ class CashFlow extends Model
     protected $dates  = [
         'created_at',
         'updated_at',
-
     ];
+
+    public function payments()
+    {
+        return $this->belongsToMany(Payment::class);
+    }
+
+    public function logs()
+    {
+        return $this->belongsToMany(Log::class);
+    }
 }
