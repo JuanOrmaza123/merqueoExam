@@ -36,6 +36,6 @@ class Log extends Model
 
     public function cashFlow()
     {
-        return $this->belongsToMany(CashFlow::class);
+        return $this->belongsToMany(CashFlow::class)->withPivot('cash_flow_count');
     }
 }

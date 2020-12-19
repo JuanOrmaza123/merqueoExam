@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $table = 'cash_flow';
+    protected $table = 'payments';
 
     protected $fillable = [
         'id',
@@ -33,8 +33,8 @@ class Payment extends Model
         'updated_at',
     ];
 
-    public function cash_flow()
+    public function cashFlow()
     {
-        return $this->belongsToMany(CashFlow::class);
+        return $this->belongsToMany(CashFlow::class)->withPivot('cash_flow_count');
     }
 }

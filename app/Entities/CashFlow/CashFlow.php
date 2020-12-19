@@ -8,7 +8,7 @@ use App\Entities\Payments\Payment;
 
 class CashFlow extends Model
 {
-    protected $table = 'payments';
+    protected $table = 'cash_flow';
 
     protected $fillable = [
         'id',
@@ -37,11 +37,11 @@ class CashFlow extends Model
 
     public function payments()
     {
-        return $this->belongsToMany(Payment::class);
+        return $this->belongsToMany(Payment::class)->withPivot('cash_flow_count');
     }
 
     public function logs()
     {
-        return $this->belongsToMany(Log::class);
+        return $this->belongsToMany(Log::class)->withPivot('cash_flow_count');
     }
 }
