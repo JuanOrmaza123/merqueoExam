@@ -15,8 +15,8 @@ class CreateCashFlowLogTable extends Migration
     {
         Schema::create('cash_flow_log', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('cash_flow_id');
-            $table->unsignedInteger('log_id');
+            $table->unsignedBigInteger('cash_flow_id');
+            $table->unsignedBigInteger('log_id');
             $table->integer('cash_flow_count');
             $table->timestamps();
         });
