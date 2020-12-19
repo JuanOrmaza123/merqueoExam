@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Entities\CashFlow;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CashFlow extends Model
+class Log extends Model
 {
-    protected $table = 'payments';
+    protected $table = 'logs';
 
     protected $fillable = [
         'id',
-        'denomination',
+        'type',
         'value',
-        'count',
         'created_at',
         'updated_at',
     ];
