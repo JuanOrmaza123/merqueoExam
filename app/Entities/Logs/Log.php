@@ -2,6 +2,7 @@
 
 namespace App\Entities\Logs;
 
+use App\Entities\CashFlow\CashFlow;
 use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
@@ -32,4 +33,9 @@ class Log extends Model
         'updated_at',
 
     ];
+
+    public function cashFlow()
+    {
+        return $this->belongsToMany(CashFlow::class);
+    }
 }
