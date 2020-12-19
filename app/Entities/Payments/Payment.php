@@ -2,6 +2,7 @@
 
 namespace App\Entities\Payments;
 
+use App\Entities\CashFlow\CashFlow;
 use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
@@ -31,4 +32,9 @@ class Payment extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function cash_flow()
+    {
+        return $this->belongsToMany(CashFlow::class);
+    }
 }
