@@ -7,6 +7,8 @@ use App\Entities\CashFlow\Repositories\Interfaces\CashFlowRepositoryInterface;
 use Illuminate\Database\QueryException;
 
 class CashFlowRepository implements CashFlowRepositoryInterface{
+    private $columns = ['id', 'denomination', 'value', 'count'];
+
     public function __construct(CashFlow $cashFlow)
     {
         $this->model = $cashFlow;
