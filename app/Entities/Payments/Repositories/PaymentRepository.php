@@ -7,7 +7,7 @@ use App\Entities\Payments\Repositories\Interfaces\PaymentRepositoryInterface;
 use Illuminate\Database\QueryException;
 
 class PaymentRepository implements PaymentRepositoryInterface{
-    private $columns = ['id', 'type', 'value'];
+    private $columns = ['id', 'total_customer', 'purchase_customer'];
 
     public function __construct(Payment $payment)
     {
