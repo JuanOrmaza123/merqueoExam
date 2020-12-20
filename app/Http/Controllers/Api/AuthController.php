@@ -5,15 +5,23 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class AuthController
+ * @package App\Http\Controllers\Api
+ */
 class AuthController extends Controller
 {
     /**
      * Registro de usuario
+     *
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function signUp(Request $request)
+    public function signUp(Request $request): JsonResponse
     {
         $request->validate([
             'name' => 'required|string',
@@ -34,8 +42,11 @@ class AuthController extends Controller
 
     /**
      * Inicio de sesión y creación de token
+     *
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function login(Request $request)
+    public function login(Request $request): JsonResponse
     {
         $request->validate([
             'email' => 'required|string|email',
@@ -67,8 +78,11 @@ class AuthController extends Controller
 
     /**
      * Cierre de sesión (anular el token)
+     *
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function logout(Request $request)
+    public function logout(Request $request): JsonResponse
     {
         $user = auth()->guard('api')->user();
 
@@ -87,8 +101,11 @@ class AuthController extends Controller
 
     /**
      * Obtener el objeto User como json
+     *
+     * @param Request $request
+     * @return JsonResponse
      */
-    public function user(Request $request)
+    public function user(Request $request): JsonResponse
     {
         $user = auth()->guard('api')->user();
 

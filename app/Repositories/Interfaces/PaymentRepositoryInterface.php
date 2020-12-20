@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Repositories\Interfaces;
+
+use App\Models\Payment;
+
+/**
+ * Interface PaymentRepositoryInterface
+ * @package App\Repositories\Interfaces
+ */
+interface PaymentRepositoryInterface
+{
+
+    /**
+     * @param array|string[] $columns
+     * @return array
+     */
+    public function listPayments(array $columns = ['*']): array;
+
+    /**
+     * @param array $data
+     * @return Payment
+     */
+    public function createPayment(array $data): Payment;
+}

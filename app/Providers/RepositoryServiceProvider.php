@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
-use App\Entities\CashFlow\Repositories\Interfaces\CashFlowRepository;
-use App\Entities\CashFlow\Repositories\Interfaces\CashFlowRepositoryInterface;
-use App\Entities\Logs\Repositories\Interfaces\LogRepository;
-use App\Entities\Logs\Repositories\Interfaces\LogRepositoryInterface;
-use App\Entities\Logs\Repositories\Interfaces\PaymentRepository;
-use App\Entities\Payments\Repositories\Interfaces\PaymentRepositoryInterface;
+use App\Repositories\CashFlowRepository;
+use App\Repositories\Interfaces\CashFlowRepositoryInterface;
+use App\Repositories\Interfaces\LogRepositoryInterface;
+use App\Repositories\Interfaces\PaymentRepositoryInterface;
+use App\Repositories\LogRepository;
+use App\Repositories\PaymentRepository;
+use App\Services\FlowCashService;
+use App\Services\Interfaces\FlowCashServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -19,20 +21,13 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-            CashFlowRepositoryInterface::class,
-            CashFlowRepository::class
-        );
+        // Repositories
+        $this->app->bind(CashFlowRepositoryInterface::class,CashFlowRepository::class);
+        $this->app->bind(LogRepositoryInterface::class,LogRepository::class);
+        $this->app->bind(PaymentRepositoryInterface::class,PaymentRepository::class);
 
-        $this->app->bind(
-            LogRepositoryInterface::class,
-            LogRepository::class
-        );
-
-        $this->app->bind(
-            PaymentRepositoryInterface::class,
-            PaymentRepository::class
-        );
+        // Services
+        $this->app->bind(FlowCashServiceInterface::class,FlowCashService::class);
     }
 
     /**

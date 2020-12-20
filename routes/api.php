@@ -27,3 +27,9 @@ Route::group(['prefix' => 'auth'], function () {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'cashFlow', 'middleware' => ['auth:api']], function () {
+    Route::post('/create', 'CashFlowController@createBaseCashFlow')
+        ->name('cashFlow.create');
+});
+
