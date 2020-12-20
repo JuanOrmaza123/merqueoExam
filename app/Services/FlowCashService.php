@@ -43,12 +43,13 @@ class FlowCashService implements FlowCashServiceInterface
     public function createBaseCashFlow(array $data): array
     {
         try {
-            DB::beginTransaction();
+            //DB::beginTransaction();
             $cashFlow = $this->cashFlowRepository->createCashFlow($data);
+            dd($cashFlow);
             $dataLog = ['type' => 'load', 'value' => $cashFlow->value];
             $log = $this->logRepository->createLog($dataLog);
             $cashFlow->logs()->attach($log, ['cash_flow_count' => $cashFlow->count]);
-            DB::commit();
+            //DB::commit();
 
             return ['status' => true, 'message' => __('cash_flow.create_success')];
         }catch (\Exception $e){
