@@ -51,12 +51,4 @@ class Payment extends Model
         'created_at',
         'updated_at',
     ];
-
-    /**
-     * @return BelongsToMany
-     */
-    public function cashFlow(): BelongsToMany
-    {
-        return $this->belongsToMany(CashFlow::class)->withPivot('cash_flow_count');
-    }
 }

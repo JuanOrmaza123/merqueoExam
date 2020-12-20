@@ -56,14 +56,6 @@ class CashFlow extends Model
     /**
      * @return BelongsToMany
      */
-    public function payments(): BelongsToMany
-    {
-        return $this->belongsToMany(Payment::class)->withPivot('cash_flow_count');
-    }
-
-    /**
-     * @return BelongsToMany
-     */
     public function logs(): BelongsToMany
     {
         return $this->belongsToMany(Log::class)->withPivot('cash_flow_count');
