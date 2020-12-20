@@ -22,7 +22,7 @@ class Payment extends Model
     protected $fillable = [
         'id',
         'total_customer',
-        'purchase_total',
+        'total_purchase',
         'created_at',
         'updated_at',
     ];

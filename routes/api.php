@@ -33,3 +33,8 @@ Route::group(['prefix' => 'cashFlow', 'middleware' => ['auth:api']], function ()
         ->name('cashFlow.create');
 });
 
+Route::group(['prefix' => 'payment', 'middleware' => ['auth:api']], function () {
+    Route::post('/create', 'PaymentController@createPayment')
+        ->name('payment.create');
+});
+

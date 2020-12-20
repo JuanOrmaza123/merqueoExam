@@ -21,4 +21,24 @@ interface CashFlowRepositoryInterface
      * @return CashFlow
      */
     public function createCashFlow(array $data): CashFlow;
+
+    /**
+     * @param int $value
+     * @return CashFlow
+     */
+    public function getCashFlowByValue(int $value): CashFlow;
+
+    /**
+     * @param int $id
+     * @param $count
+     * @return bool
+     */
+    public function cashFlowAddCount(int $id, $count): bool;
+
+    /**
+     * @param int $id
+     * @param $count
+     * @return bool
+     */
+    public function cashFlowSubtractCount(int $id, $count): bool;
 }

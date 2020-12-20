@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\CashFlow\CashFlow;
 use App\Entities\Logs\Log;
-use App\Entities\Payments\Payment;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 

@@ -45,4 +45,39 @@ class CashFlowRepository implements CashFlowRepositoryInterface
     {
         return $this->cashFlow->create($data);
     }
+
+    /**
+     * @param int $value
+     * @return CashFlow
+     */
+    public function getCashFlowByValue(int $value): CashFlow
+    {
+        return $this->cashFlow->where('value', $value)->first();
+    }
+
+    /**
+     * @param int $id
+     * @param $count
+     * @return bool
+     */
+    public function cashFlowAddCount(int $id, $count): bool
+    {
+        $cashFlow = $this->cashFlow->where('id', $id)->first();
+        $cashFlow->count = $cashFlow->count+ $count;
+
+        return $cashFlow->save();
+    }
+
+    /**
+     * @param int $id
+     * @param $count
+     * @return bool
+     */
+    public function cashFlowSubtractCount(int $id, $count): bool
+    {
+        $cashFlow = $this->cashFlow->where('id', $id)->first();
+        $cashFlow->count = $cashFlow->count - $count;
+
+        return $cashFlow->save();
+    }
 }

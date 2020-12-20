@@ -28,7 +28,7 @@ class PaymentRepository implements PaymentRepositoryInterface{
      */
     public function listPayments(array $columns = ['*']): array
     {
-        $paymentList = $this->payment->get($this->columns);
+        $paymentList = $this->payment->orderBy('value', 'desc')->orderBy('denomination', 'desc')->get($this->columns);
 
         return (empty($paymentList)) ? [] : $paymentList ;
     }

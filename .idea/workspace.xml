@@ -2,30 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0390d8ba-da79-4d8f-a5c5-ec25c87ab8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/FlowCashService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Interfaces/FlowCashServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Interfaces/PaymentServiceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/PaymentService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/cash_flow.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/es/cash_flow.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CashFlowControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Repositories/CashFlowRepositoryTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/RequestFiles/bodyCashFlowCreate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Services/FlowCashServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/CashFlow/CashFlow.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/CashFlow/Repositories/CashFlowRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/CashFlow/Repositories/Interfaces/CashFlowRepositoryInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Logs/Log.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Logs/Repositories/Interfaces/LogRepositoryInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Logs/Repositories/LogRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Payments/Payment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Payments/Repositories/Interfaces/PaymentRepositoryInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/Payments/Repositories/PaymentRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/PaymentControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/RequestFiles/bodyPaymentCreate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/testController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/testController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/CashFlowRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CashFlowRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/CashFlowRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/CashFlowRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/PaymentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/PaymentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/PaymentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PaymentService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608402741003</updated>
       <workItem from="1608402744659" duration="2219000" />
-      <workItem from="1608405002187" duration="18245000" />
+      <workItem from="1608405002187" duration="28506000" />
     </task>
     <servers />
   </component>

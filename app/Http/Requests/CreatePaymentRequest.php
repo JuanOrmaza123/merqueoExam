@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PaymentRequest extends FormRequest
+class CreatePaymentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class PaymentRequest extends FormRequest
     {
         return [
             'total_customer' => 'in:100000,50000,20000,10000,5000,1000,500,200,100,50|required|integer',
-            'purchase_total' => 'in:100000,50000,20000,10000,5000,1000,500,200,100,50|required|integer'
+            'total_purchase' => 'in:100000,50000,20000,10000,5000,1000,500,200,100,50|required|integer'
         ];
     }
 }
