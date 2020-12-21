@@ -43,13 +43,12 @@ class FlowCashService implements FlowCashServiceInterface
     public function createBaseCashFlow(array $data): array
     {
         try {
-            //DB::beginTransaction();
+            DB::beginTransaction();
             $cashFlow = $this->cashFlowRepository->createCashFlow($data);
-            dd($cashFlow);
             $dataLog = ['type' => 'load', 'value' => $cashFlow->value];
             $log = $this->logRepository->createLog($dataLog);
             $cashFlow->logs()->attach($log, ['cash_flow_count' => $cashFlow->count]);
-            //DB::commit();
+            DB::commit();
 
             return ['status' => true, 'message' => __('cash_flow.create_success')];
         }catch (\Exception $e){
@@ -57,5 +56,32 @@ class FlowCashService implements FlowCashServiceInterface
 
             return ['status' => false, 'message' => $e->getMessage()];
         }
+    }
+
+    /**
+     * @return array
+     */
+    public function getStatusCashFlow(): array
+    {
+        $data = [
+            'totalCashFlow' => 0,
+        ];
+
+        $listCashFlow = $this->cashFlowRepository->listCashFlows();
+
+        if(empty($listCashFlow)){
+            $data = [
+                'totalCashFlow' => 0,
+                'coin' => [],
+                'bill' => []
+            ];
+        }else{
+            foreach ($listCashFlow as $cashFlow) {
+                $data['totalCashFlow'] += $cashFlow['value'] * $cashFlow['count'];
+                $data[$cashFlow['denomination']][] = ['value' => $cashFlow['value'], 'count' => $cashFlow['count']];
+            }
+        }
+
+        return ['status' => true, 'message' => $data];
     }
 }

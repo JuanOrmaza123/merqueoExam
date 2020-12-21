@@ -65,4 +65,15 @@ class CashFlowControllerTest extends TestCase
 
         $response->assertStatus(500);
     }
+
+    /**
+     * This test is successful on endpoint Get Status Cash Flow
+     */
+    public function testGetStatusFlowCashSuccess(): void
+    {
+        $this->artisan('db:seed --class=PaymentsSeeder');
+        $response = $this->get(route('cashFlow.getStatus'), ['Accept' => 'application/json']);
+        $response->assertStatus(200);
+
+    }
 }

@@ -56,17 +56,21 @@ class AuthController extends Controller
 
         $credentials = request(['email', 'password']);
 
-        if (!Auth::attempt($credentials))
+        if (!Auth::attempt($credentials)){
             return response()->json([
                 'message' => 'Unauthorized'
             ], 401);
+        }
 
         $user = $request->user();
         $tokenResult = $user->createToken('Personal Access Token');
 
         $token = $tokenResult->token;
-        if ($request->remember_me)
+
+        if ($request->remember_me){
             $token->expires_at = Carbon::now()->addWeeks(1);
+        }
+
         $token->save();
 
         return response()->json([
@@ -97,24 +101,5 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Successfully logged out'
         ]);
-    }
-
-    /**
-     * Obtener el objeto User como json
-     *
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function user(Request $request): JsonResponse
-    {
-        $user = auth()->guard('api')->user();
-
-        if (!$user) {
-            return response()->json([
-                'message' => 'unauthenticated'
-            ]);
-        }
-
-        return response()->json($user);
     }
 }

@@ -44,6 +44,7 @@ class CashFlowRepository implements CashFlowRepositoryInterface
     public function createCashFlow(array $data): CashFlow
     {
         $cashFlow = $this->cashFlow->where('value', $data['value'])->first();
+
         if($cashFlow){
             $this->cashFlowAddCount($cashFlow->id, $data['count']);
             return $cashFlow;

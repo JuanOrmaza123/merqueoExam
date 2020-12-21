@@ -41,4 +41,14 @@ class CashFlowController extends Controller
 
         return response()->json($response['message'], 201);
     }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getStatusCashFlow(): JsonResponse
+    {
+        $response = $this->flowCashService->getStatusCashFlow();
+
+        return response()->json($response['message'], 200);
+    }
 }

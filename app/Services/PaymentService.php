@@ -71,6 +71,7 @@ class PaymentService implements PaymentServiceInterface
             $cashFlow = $this->cashFlowRepository->getCashFlowByValue($data['total_customer']);
             $cashFlow->logs()->attach($logEntry, ['cash_flow_count' => 1]);
             $add = $this->cashFlowRepository->cashFlowAddCount($cashFlow->id, 1);
+
             if (!$add) {
                 DB::rollBack();
                 return ['status' => false, 'message' => 'Ha ocurrido un error'];
@@ -79,16 +80,17 @@ class PaymentService implements PaymentServiceInterface
             $dataLogEgress = ['type' => 'egress', 'value' => $totalBackMoney];
             $logEgress = $this->logRepository->createLog($dataLogEgress);
 
-            array_walk($backMoneyList, function ($backMoney) use ($logEgress) {
+            foreach ($backMoneyList as $backMoney) {
                 $cashFlow = $this->cashFlowRepository->getCashFlowByValue($backMoney['value']);
                 $cashFlow->logs()->attach($logEgress, ['cash_flow_count' => $backMoney['count']]);
                 $subtract = $this->cashFlowRepository->cashFlowSubtractCount($cashFlow->id, $backMoney['count']);
                 if (!$subtract) {
-                    throw new \Exception('Ha ocurrido un error');
+                    DB::rollBack();
+                    return ['status' => false, 'message' => 'Ha ocurrido un error'];
                 }
-            });
+            }
             DB::commit();
-            return ['status' => true, 'message' => 'Payment success'];
+            return ['status' => true, 'message' => 'Payment success', 'backMoney' => $backMoneyList];
         } catch (\Exception $e) {
             DB::rollBack();
 

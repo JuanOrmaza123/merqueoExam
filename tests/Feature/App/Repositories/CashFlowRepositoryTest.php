@@ -27,4 +27,17 @@ class CashFlowRepositoryTest extends TestCase
         $this->assertInstanceOf(CashFlow::class, $response);
         $this->assertDatabaseHas('cash_flow', $data);
     }
+
+    public function testCreateCashFlowAddCount(): void
+    {
+        $data = factory(CashFlow::class)->create()->toArray();
+
+        $cashFlowRepository = new CashFlowRepository(new CashFlow());
+        $response = $cashFlowRepository->createCashFlow($data);
+
+        $data['count'] += $data['count'];
+
+        $this->assertInstanceOf(CashFlow::class, $response);
+        $this->assertDatabaseHas('cash_flow', $data);
+    }
 }

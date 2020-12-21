@@ -15,12 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::post('login', 'Api\AuthController@login');
-    Route::post('signup', 'Api\AuthController@signUp');
+    Route::post('login', 'Api\AuthController@login')->name('login');
+    Route::post('signup', 'Api\AuthController@signUp')->name('signup');
 
     Route::group(['middleware' => ['api']], function () {
-        Route::get('logout', 'Api\AuthController@logout');
-        Route::get('user', 'Api\AuthController@user');
+        Route::get('logout', 'Api\AuthController@logout')->name('logout');
     });
 });
 
@@ -31,6 +30,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'cashFlow', 'middleware' => ['auth:api']], function () {
     Route::post('/create', 'CashFlowController@createBaseCashFlow')
         ->name('cashFlow.create');
+
+    Route::get('/getStatus', 'CashFlowController@getStatusCashFlow')
+        ->name('cashFlow.getStatus');
 });
 
 Route::group(['prefix' => 'payment', 'middleware' => ['auth:api']], function () {
