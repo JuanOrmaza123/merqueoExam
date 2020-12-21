@@ -23,6 +23,9 @@ class AuthControllerTest extends TestCase
         $this->artisan('passport:install');
     }
 
+    /**
+     * This case is success singup
+     */
     public function testSignup()
     {
         $response = $this->post(route('signup'), [
@@ -69,6 +72,9 @@ class AuthControllerTest extends TestCase
         $responseLogout->assertJson(['message' => 'Successfully logged out']);
     }
 
+    /**
+     * This case is login Unauthorized
+     */
     public function testLoginUnauthorized(): void
     {
         $userFactory = factory(User::class)->create();
@@ -86,6 +92,9 @@ class AuthControllerTest extends TestCase
         $response->assertJson(['message' => 'Unauthorized']);
     }
 
+    /**
+     * This case is logout Unauthorized
+     */
     public function testLogoutUnauthorized(): void
     {
         $userFactory = factory(User::class)->create();

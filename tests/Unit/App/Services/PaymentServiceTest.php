@@ -14,6 +14,10 @@ use App\Services\PaymentService;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Tests\TestCase;
 
+/**
+ * Class PaymentServiceTest
+ * @package Tests\Unit\App\Services
+ */
 class PaymentServiceTest extends TestCase
 {
     /**
@@ -51,7 +55,10 @@ class PaymentServiceTest extends TestCase
         );
     }
 
-    public function testCreatePaymentSuccess()
+    /**
+     * This case success for Create Payment
+     */
+    public function testCreatePaymentSuccess(): void
     {
         $data = ["total_customer" => 50000, "total_purchase" => 10000];
 
@@ -146,6 +153,9 @@ class PaymentServiceTest extends TestCase
         );
     }
 
+    /**
+     * This case error for Create payment when no get back money
+     */
     public function testCreatePaymentErrorNoGetBackMoney()
     {
         $this->cashFlowRepositoryMock->shouldReceive('listCashFlows')
@@ -161,7 +171,11 @@ class PaymentServiceTest extends TestCase
         ], $response);
     }
 
-    public function testCreatePaymentErrorAddCount(){
+    /**
+     * This case error for create payment when error add Count
+     */
+    public function testCreatePaymentErrorAddCount(): void
+    {
         $data = ["total_customer" => 50000, "total_purchase" => 10000];
 
         $this->cashFlowRepositoryMock->shouldReceive('listCashFlows')
@@ -225,7 +239,11 @@ class PaymentServiceTest extends TestCase
         ], $response);
     }
 
-    public function testCreatePaymentErrorSubtractCount(){
+    /**
+     * This case error for create payment when error subtract count
+     */
+    public function testCreatePaymentErrorSubtractCount(): void
+    {
         $data = ["total_customer" => 50000, "total_purchase" => 10000];
 
         $this->cashFlowRepositoryMock->shouldReceive('listCashFlows')

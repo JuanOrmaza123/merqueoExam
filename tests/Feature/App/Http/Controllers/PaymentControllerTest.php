@@ -11,6 +11,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 
+/**
+ * Class PaymentControllerTest
+ * @package App\Http\Controllers
+ */
 class PaymentControllerTest extends TestCase
 {
     use WithoutMiddleware, DatabaseTransactions;

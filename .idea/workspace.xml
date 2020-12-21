@@ -2,102 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0390d8ba-da79-4d8f-a5c5-ec25c87ab8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/PaymentFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/Api/AuthControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/App/Services/PaymentServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CashFlowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CashFlowController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/testController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CashFlowRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CashFlowRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/FlowCashService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/FlowCashService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Interfaces/FlowCashServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Interfaces/FlowCashServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/PaymentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PaymentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Console/Kernel.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Console/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Console/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Exceptions/Handler.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Exceptions/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Exceptions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/Api/AuthController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/Api/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/Api/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/CashFlowController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/Controller.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Controllers/testController.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Kernel.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/Authenticate.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/CheckForMaintenanceMode.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/EncryptCookies.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/RedirectIfAuthenticated.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/TrimStrings.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/TrustProxies.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/VerifyCsrfToken.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Middleware/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Requests/CreateCashFlowRequest.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Requests/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/Requests/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Http/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Models/CashFlow.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Models/Log.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Models/Payment.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Models/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Models/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/AppServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/AuthServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/BroadcastServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/EventServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/RepositoryServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/RouteServiceProvider.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Providers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/CashFlowRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/Interfaces/CashFlowRepositoryInterface.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/Interfaces/LogRepositoryInterface.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/Interfaces/PaymentRepositoryInterface.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/Interfaces/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/Interfaces/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/LogRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/PaymentRepository.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Repositories/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/FlowCashService.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/Interfaces/FlowCashServiceInterface.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/Interfaces/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/Interfaces/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/PaymentService.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/Services/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/User.php.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_css/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_css/nv.d3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_css/octicons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_icons/file-code.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_icons/file-directory.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/nv.d3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/_js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/dashboard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PaymentsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PaymentsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CashFlowControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CashFlowControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/Api/AuthControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/Api/AuthControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/PaymentControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/PaymentControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/App/Repositories/CashFlowRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Repositories/CashFlowRepositoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/App/Services/FlowCashServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/App/Services/FlowCashServiceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/App/Services/PaymentServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/App/Services/PaymentServiceTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +195,8 @@
       <workItem from="1608402744659" duration="2219000" />
       <workItem from="1608405002187" duration="28751000" />
       <workItem from="1608439159697" duration="321000" />
-      <workItem from="1608507335705" duration="17251000" />
+      <workItem from="1608507335705" duration="17576000" />
+      <workItem from="1608525119795" duration="663000" />
     </task>
     <servers />
   </component>

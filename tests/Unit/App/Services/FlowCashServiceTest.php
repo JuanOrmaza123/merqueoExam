@@ -16,8 +16,14 @@ use Tests\TestCase;
  */
 class FlowCashServiceTest extends TestCase
 {
+    /**
+     * @var CashFlowRepositoryInterface|\Mockery\LegacyMockInterface|\Mockery\MockInterface
+     */
     protected $cashFlowRepositoryMock;
 
+    /**
+     * @var LogRepositoryInterface|\Mockery\LegacyMockInterface|\Mockery\MockInterface
+     */
     protected $logRepositoryMock;
 
     protected function setUp(): void
@@ -89,6 +95,9 @@ class FlowCashServiceTest extends TestCase
         $this->assertEquals(['status' => false, 'message' => 'error'], $response);
     }
 
+    /**
+     * This case is Error for GetStatusCashFlow
+     */
     public function testGetStatusCashFlowErrorStatus()
     {
         $cashFlowService = new FlowCashService($this->cashFlowRepositoryMock, $this->logRepositoryMock);
