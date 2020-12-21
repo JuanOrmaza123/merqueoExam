@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateCashFlowRequest;
 use App\Services\Interfaces\FlowCashServiceInterface;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 /**
  * Class CashFlowController
@@ -48,6 +47,17 @@ class CashFlowController extends Controller
     public function getStatusCashFlow(): JsonResponse
     {
         $response = $this->flowCashService->getStatusCashFlow();
+
+        return response()->json($response['message'], 200);
+    }
+
+    public function setEmptyFlowCash(): JsonResponse
+    {
+        $response = $this->flowCashService->setEmptyFlowCash();
+
+        if(!$response['status']){
+            return response()->json($response['message'], 500);
+        }
 
         return response()->json($response['message'], 200);
     }

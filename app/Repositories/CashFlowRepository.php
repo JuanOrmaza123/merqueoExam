@@ -87,4 +87,9 @@ class CashFlowRepository implements CashFlowRepositoryInterface
 
         return $cashFlow->save();
     }
+
+    public function setEmptyFlowCash(): bool
+    {
+        return $this->cashFlow->where('count','>', 0)->update(['count' => 0]);
+    }
 }

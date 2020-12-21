@@ -41,4 +41,9 @@ interface CashFlowRepositoryInterface
      * @return bool
      */
     public function cashFlowSubtractCount(int $id, $count): bool;
+
+    /**
+     * @return bool
+     */
+    public function setEmptyFlowCash(): bool;
 }

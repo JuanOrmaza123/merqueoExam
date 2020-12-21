@@ -12,12 +12,6 @@ interface PaymentRepositoryInterface
 {
 
     /**
-     * @param array|string[] $columns
-     * @return array
-     */
-    public function listPayments(array $columns = ['*']): array;
-
-    /**
      * @param array $data
      * @return Payment
      */

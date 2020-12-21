@@ -33,6 +33,9 @@ Route::group(['prefix' => 'cashFlow', 'middleware' => ['auth:api']], function ()
 
     Route::get('/getStatus', 'CashFlowController@getStatusCashFlow')
         ->name('cashFlow.getStatus');
+
+    Route::get('/setEmpty', 'CashFlowController@setEmptyFlowCash')
+        ->name('cashFlow.setEmpty');
 });
 
 Route::group(['prefix' => 'payment', 'middleware' => ['auth:api']], function () {

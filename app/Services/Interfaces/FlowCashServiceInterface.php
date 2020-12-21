@@ -21,4 +21,9 @@ interface FlowCashServiceInterface
      * @return array
      */
     public function getStatusCashFlow(): array;
+
+    /**
+     * @return array
+     */
+    public function setEmptyFlowCash(): array;
 }

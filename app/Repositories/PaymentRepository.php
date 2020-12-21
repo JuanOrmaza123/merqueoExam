@@ -23,17 +23,6 @@ class PaymentRepository implements PaymentRepositoryInterface{
     }
 
     /**
-     * @param array|string[] $columns
-     * @return array
-     */
-    public function listPayments(array $columns = ['*']): array
-    {
-        $paymentList = $this->payment->orderBy('value', 'desc')->orderBy('denomination', 'desc')->get($this->columns);
-
-        return (empty($paymentList)) ? [] : $paymentList ;
-    }
-
-    /**
      * @param array $data
      * @return Payment
      */

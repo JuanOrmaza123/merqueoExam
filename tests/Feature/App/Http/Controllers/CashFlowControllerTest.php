@@ -76,4 +76,24 @@ class CashFlowControllerTest extends TestCase
         $response->assertStatus(200);
 
     }
+
+    /**
+     * This case is set empty cashflow success
+     */
+    public function testSetEmptyFlowCashSuccess(): void
+    {
+        $this->artisan('db:seed --class=PaymentsSeeder');
+
+        $response = $this->get(route('cashFlow.setEmpty'), ['Accept' => 'application/json']);
+        $response->assertStatus(200);
+    }
+
+    /**
+     * This case is set empty cashflow error
+     */
+    public function testSetEmptyFlowCashError(): void
+    {
+        $response = $this->get(route('cashFlow.setEmpty'), ['Accept' => 'application/json']);
+        $response->assertStatus(500);
+    }
 }

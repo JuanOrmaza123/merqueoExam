@@ -84,4 +84,17 @@ class FlowCashService implements FlowCashServiceInterface
 
         return ['status' => true, 'message' => $data];
     }
+
+    /**
+     * @return array
+     */
+    public function setEmptyFlowCash(): array
+    {
+        $response = $this->cashFlowRepository->setEmptyFlowCash();
+        if(!$response){
+            return ['status' => false, 'message' => 'Ha ocurrido un error'];
+        }
+
+        return ['status' => true, 'message' => 'Empty cash flow success'];
+    }
 }
