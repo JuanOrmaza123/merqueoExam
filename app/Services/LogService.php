@@ -34,7 +34,7 @@ class LogService implements LogServiceInterface
 
         $listLogs = $this->logRepository->listLogs();
         if(empty($listLogs->toArray())){
-            return ['status' => false, 'message' => 'No logs register'];
+            return ['status' => false, 'message' => __('cash_flow.no_logs')];
         }
 
         foreach ($listLogs as $listLog) {

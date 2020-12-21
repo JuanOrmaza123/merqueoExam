@@ -92,9 +92,9 @@ class FlowCashService implements FlowCashServiceInterface
     {
         $response = $this->cashFlowRepository->setEmptyFlowCash();
         if(!$response){
-            return ['status' => false, 'message' => 'Ha ocurrido un error'];
+            return ['status' => false, 'message' => __('cash_flow.system_error')];
         }
 
-        return ['status' => true, 'message' => 'Empty cash flow success'];
+        return ['status' => true, 'message' => __('cash_flow.empty_cash_flow_success')];
     }
 }

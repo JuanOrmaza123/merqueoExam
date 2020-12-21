@@ -142,7 +142,7 @@ class PaymentServiceTest extends TestCase
         $this->assertEquals(
             [
                 'status' => true,
-                'message' => 'Payment success',
+                'message' => __('cash_flow.payment_success'),
                 'backMoney' => [
                     20000 => [
                         'value' => 20000,
@@ -167,7 +167,7 @@ class PaymentServiceTest extends TestCase
 
         $this->assertEquals([
             'status' => false,
-            'message' => "No get back money",
+            'message' => __('cash_flow.no_back_money'),
         ], $response);
     }
 
@@ -235,7 +235,7 @@ class PaymentServiceTest extends TestCase
 
         $this->assertEquals([
             'status' => false,
-            'message' => "Ha ocurrido un error",
+            'message' => __('cash_flow.system_error'),
         ], $response);
     }
 
@@ -325,7 +325,7 @@ class PaymentServiceTest extends TestCase
 
         $this->assertEquals([
             'status' => false,
-            'message' => "Ha ocurrido un error",
+            'message' => __('cash_flow.system_error'),
         ], $response);
     }
 

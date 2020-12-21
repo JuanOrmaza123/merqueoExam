@@ -60,7 +60,7 @@ class PaymentService implements PaymentServiceInterface
             $backMoneyList = $this->getBackMoney($totalBackMoney);
 
             if (empty($backMoneyList)) {
-                return ['status' => false, 'message' => 'No get back money'];
+                return ['status' => false, 'message' => __('cash_flow.no_back_money')];
             }
 
             $payment = $this->paymentRepository->createPayment($data);
@@ -74,7 +74,7 @@ class PaymentService implements PaymentServiceInterface
 
             if (!$add) {
                 DB::rollBack();
-                return ['status' => false, 'message' => 'Ha ocurrido un error'];
+                return ['status' => false, 'message' => __('cash_flow.system_error')];
             }
 
             $dataLogEgress = ['type' => 'egress', 'value' => $totalBackMoney];
@@ -86,11 +86,11 @@ class PaymentService implements PaymentServiceInterface
                 $subtract = $this->cashFlowRepository->cashFlowSubtractCount($cashFlow->id, $backMoney['count']);
                 if (!$subtract) {
                     DB::rollBack();
-                    return ['status' => false, 'message' => 'Ha ocurrido un error'];
+                    return ['status' => false, 'message' => __('cash_flow.system_error')];
                 }
             }
             DB::commit();
-            return ['status' => true, 'message' => 'Payment success', 'backMoney' => $backMoneyList];
+            return ['status' => true, 'message' => __('cash_flow.payment_success'), 'backMoney' => $backMoneyList];
         } catch (\Exception $e) {
             DB::rollBack();
 
