@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \App\Models\Log;
+use \App\Models\CashFlow;
+use \Illuminate\Support\Facades\DB;
 
 class PaymentsSeeder extends Seeder
 {
@@ -11,7 +14,7 @@ class PaymentsSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
+        $dataCashFlow = [
             [
                 'denomination' => 'bill',
                 'value' => 100000,
@@ -83,6 +86,25 @@ class PaymentsSeeder extends Seeder
                 'updated_at' => \Carbon\Carbon::now(),
             ]
         ];
-        \App\Models\CashFlow::insert($data);
+
+        $totalCashFlow = 0;
+        foreach ($dataCashFlow as $key => $cashFlow){
+            $totalCashFlow += $cashFlow['value']*$cashFlow['count'];
+        }
+
+        $log = factory(Log::class)->create([
+            'type' => 'load',
+            'value' => $totalCashFlow
+        ]);
+
+        foreach ($dataCashFlow as $key => $cashFlow) {
+            $dataCashFlow = factory(CashFlow::class)->create($cashFlow);
+            DB::table('cash_flow_log')
+                ->insert([
+                    'cash_flow_id' => $dataCashFlow->id,
+                    'log_id' => $log->id,
+                    'cash_flow_count' => $cashFlow['count']
+                ]);
+        }
     }
 }

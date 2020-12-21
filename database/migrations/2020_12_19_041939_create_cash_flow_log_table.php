@@ -18,7 +18,6 @@ class CreateCashFlowLogTable extends Migration
             $table->unsignedBigInteger('cash_flow_id');
             $table->unsignedBigInteger('log_id');
             $table->integer('cash_flow_count');
-            $table->timestamps();
         });
     }
 

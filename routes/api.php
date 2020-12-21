@@ -40,3 +40,8 @@ Route::group(['prefix' => 'payment', 'middleware' => ['auth:api']], function () 
         ->name('payment.create');
 });
 
+Route::group(['prefix' => 'log', 'middleware' => ['auth:api']], function () {
+    Route::get('/getLogs', 'LogController@getLogs')
+        ->name('log.getLogs');
+});
+

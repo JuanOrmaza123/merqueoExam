@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Log;
 use App\Repositories\Interfaces\LogRepositoryInterface;
+use Illuminate\Support\Collection;
 
 /**
  * Class LogRepository
@@ -29,11 +30,11 @@ class LogRepository implements LogRepositoryInterface
      * @param array|string[] $columns
      * @return array
      */
-    public function listLogs(array $columns = ['*']): array
+    public function listLogs(array $columns = ['*']): Collection
     {
         $logList = $this->log->get($columns);
 
-        return (empty($logList)) ? [] : $logList->toArray();
+        return $logList;
     }
 
     /**

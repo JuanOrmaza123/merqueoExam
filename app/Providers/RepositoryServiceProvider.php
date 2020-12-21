@@ -10,7 +10,9 @@ use App\Repositories\LogRepository;
 use App\Repositories\PaymentRepository;
 use App\Services\FlowCashService;
 use App\Services\Interfaces\FlowCashServiceInterface;
+use App\Services\Interfaces\LogServiceInterface;
 use App\Services\Interfaces\PaymentServiceInterface;
+use App\Services\LogService;
 use App\Services\PaymentService;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,6 +33,7 @@ class RepositoryServiceProvider extends ServiceProvider
         // Services
         $this->app->bind(FlowCashServiceInterface::class,FlowCashService::class);
         $this->app->bind(PaymentServiceInterface::class,PaymentService::class);
+        $this->app->bind(LogServiceInterface::class,LogService::class);
     }
 
     /**
