@@ -36,7 +36,7 @@ class AuthController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => __('auth.create_user')
         ], 201);
     }
 
@@ -58,7 +58,7 @@ class AuthController extends Controller
 
         if (!Auth::attempt($credentials)){
             return response()->json([
-                'message' => 'Unauthorized'
+                'message' => __('auth.unauthorized')
             ], 401);
         }
 
@@ -92,14 +92,14 @@ class AuthController extends Controller
 
         if (!$user) {
             return response()->json([
-                'message' => 'unauthenticated'
+                'message' => __('auth.unauthenticated')
             ]);
         }
 
         auth()->guard('api')->user()->token()->revoke();
 
         return response()->json([
-            'message' => 'Successfully logged out'
+            'message' => __('auth.logout')
         ]);
     }
 }

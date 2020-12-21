@@ -37,7 +37,7 @@ class AuthControllerTest extends TestCase
         ]);
 
         $response->assertStatus(201);
-        $response->assertJson(['message' => 'Successfully created user!']);
+        $response->assertJson(['message' => __('auth.create_user')]);
     }
 
     /**
@@ -69,7 +69,7 @@ class AuthControllerTest extends TestCase
                 ]);
 
         $responseLogout->assertStatus(200);
-        $responseLogout->assertJson(['message' => 'Successfully logged out']);
+        $responseLogout->assertJson(['message' => __('auth.logout')]);
     }
 
     /**
@@ -89,7 +89,7 @@ class AuthControllerTest extends TestCase
 
 
         $response->assertStatus(401);
-        $response->assertJson(['message' => 'Unauthorized']);
+        $response->assertJson(['message' => __('auth.unauthorized')]);
     }
 
     /**
@@ -121,7 +121,7 @@ class AuthControllerTest extends TestCase
                 ]);
 
         $responseLogout->assertStatus(200);
-        $responseLogout->assertJson(['message' => 'unauthenticated']);
+        $responseLogout->assertJson(['message' => __('auth.unauthenticated')]);
     }
 
 }
