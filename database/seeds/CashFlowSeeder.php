@@ -98,11 +98,6 @@ class CashFlowSeeder extends Seeder
             'value' => $totalCashFlow
         ]);
 
-        factory(Log::class)->create([
-            'type' => 'egress',
-            'value' => 1000
-        ]);
-
         foreach ($dataCashFlow as $key => $cashFlow) {
             $dataCashFlow = factory(CashFlow::class)->create($cashFlow);
             DB::table('cash_flow_log')
