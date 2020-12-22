@@ -98,9 +98,9 @@ class CashFlowSeeder extends Seeder
             'value' => $totalCashFlow
         ]);
 
-        $log = factory(Log::class)->create([
+        factory(Log::class)->create([
             'type' => 'egress',
-            'value' => 250
+            'value' => 1000
         ]);
 
         foreach ($dataCashFlow as $key => $cashFlow) {

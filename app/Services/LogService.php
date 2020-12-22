@@ -67,13 +67,14 @@ class LogService implements LogServiceInterface
         }
 
         foreach ($listLogs as $listLog) {
-            if($listLog['type'] == 'load' || $listLog['type'] == 'entry'){
-                $totalCashFlow += $listLog['value'];
-            }else{
+            if($listLog['type'] == 'egress'){
                 $totalCashFlow -= $listLog['value'];
+                continue;
             }
+            $totalCashFlow += $listLog['value'];
+
         }
 
-        return ['status' => true, 'message' => $totalCashFlow];
+        return ['status' => true, 'message' => ['total_cash_flow' => $totalCashFlow]];
     }
 }

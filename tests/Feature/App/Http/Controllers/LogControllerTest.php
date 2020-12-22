@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Log;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
@@ -44,13 +45,23 @@ class LogControllerTest extends TestCase
      */
     public function testGetStatusByDateSuccess(): void
     {
-        $this->artisan('db:seed --class=CashFlowSeeder');
-        $bodyContents = file_get_contents(__DIR__ . '/../../../RequestFiles/bodyListLogsByDate.json');
-        $body = json_decode($bodyContents, true);
+        $length = 5;
+        $logsEntryFactory = factory(Log::class, $length)->create(['created_at' => '2020-12-20 01:00:00', 'type' => 'entry'])->toArray();
+        $logsEgressFactory = factory(Log::class, $length)->create(['created_at' => '2020-12-20 01:00:00', 'type' => 'egress'])->toArray();
+        $totalCashFlow = 0;
 
-        $response = $this->post(route('log.getStatusByDate'), $body, ['Accept' => 'application/json']);
+        for ($i = 0; $length > $i; $i++){
+            $totalCashFlow += $logsEntryFactory[$i]['value'];
+            $totalCashFlow -= $logsEgressFactory[$i]['value'];
+        }
+
+        $response = $this->get(route('log.getStatusByDate',
+            ['date' => '2020-12-31 23:59:59']),
+            ['Accept' => 'application/json']
+        );
 
         $response->assertStatus(200);
+        $response->assertJson(['total_cash_flow' => $totalCashFlow]);
     }
 
     /**
@@ -58,10 +69,10 @@ class LogControllerTest extends TestCase
      */
     public function testGetStatusByDateError(): void
     {
-        $bodyContents = file_get_contents(__DIR__ . '/../../../RequestFiles/bodyListLogsByDate.json');
-        $body = json_decode($bodyContents, true);
-
-        $response = $this->post(route('log.getStatusByDate'), $body, ['Accept' => 'application/json']);
+        $response = $this->get(route('log.getStatusByDate',
+            ['date' => '2020-12-31 23:59:59']),
+            ['Accept' => 'application/json']
+        );
 
         $response->assertStatus(500);
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GetlogsByDateRequest extends FormRequest
+class GetLogsByDateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,6 +14,13 @@ class GetlogsByDateRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }
+
+    public function all($keys = null)
+    {
+        $data = parent::all($keys);
+        $data['date'] = $this->route('date');
+        return $data;
     }
 
     /**
@@ -27,4 +34,5 @@ class GetlogsByDateRequest extends FormRequest
             'date' => 'required|date|date_format:Y-m-d H:i:s',
         ];
     }
+
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\GetlogsByDateRequest;
+use App\Http\Requests\GetLogsByDateRequest;
 use App\Services\Interfaces\LogServiceInterface;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 /**
  * Class LogController
@@ -43,12 +44,13 @@ class LogController extends Controller
     }
 
     /**
-     * @param GetlogsByDateRequest $getlogsByDateRequest
+     * @param GetLogsByDateRequest $getLogsByDateRequest
      * @return JsonResponse
      */
-    public function getStatusByDate(GetlogsByDateRequest $getlogsByDateRequest): JsonResponse
+    public function getStatusByDate(GetLogsByDateRequest $getLogsByDateRequest): JsonResponse
     {
-        $response = $this->logService->getStatusByDate($getlogsByDateRequest->validated()['date']);
+        $request = $getLogsByDateRequest->validated();
+        $response = $this->logService->getStatusByDate($request['date']);
 
         if (!$response['status']) {
             return response()->json($response['message'], 500);

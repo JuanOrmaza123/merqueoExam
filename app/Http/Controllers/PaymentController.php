@@ -35,9 +35,9 @@ class PaymentController extends Controller
         $response = $this->paymentService->createPayment($createPaymentRequest->validated());
 
         if(!$response['status']){
-            return response()->json($response['message'], 500);
+            return response()->json($response['message'],500);
         }
 
-        return response()->json($response['message'], 201);
+        return response()->json([$response['message'], 'back_money' =>$response['backMoney']],  201);
     }
 }

@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0390d8ba-da79-4d8f-a5c5-ec25c87ab8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/RequestFiles/bodyListLogsByDate.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CashFlowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CashFlowController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/LogRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/LogRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/LogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/LogRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/FlowCashService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/FlowCashService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Interfaces/LogServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Interfaces/LogServiceInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/GetlogsByDateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/GetLogsByDateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/LogService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/LogService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PaymentsSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/LogFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/LogFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CashFlowSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CashFlowSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CashFlowControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/CashFlowControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/LogControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/LogControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/PaymentControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/App/Http/Controllers/PaymentControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/App/Services/FlowCashServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/App/Services/FlowCashServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,6 +208,7 @@
       <workItem from="1608525119795" duration="850000" />
       <workItem from="1608556824296" duration="11421000" />
       <workItem from="1608597369492" duration="8871000" />
+      <workItem from="1608642864084" duration="8444000" />
     </task>
     <servers />
   </component>
@@ -234,5 +226,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Services/PaymentService.php</url>
+          <line>87</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
