@@ -19,3 +19,8 @@
 - php artisan key:generate.
 - php artisan cache:clear.
 - php artisan config:clear.
+
+## Pasos para ejecutar las pruebas
+
+- configurar los accesos a la base de datos para las pruebas en el archivo .env.testing.
+- ejecutar: vendor/bin/phpunit.
