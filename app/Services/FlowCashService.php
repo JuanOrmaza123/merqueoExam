@@ -64,22 +64,16 @@ class FlowCashService implements FlowCashServiceInterface
     public function getStatusCashFlow(): array
     {
         $data = [
-            'totalCashFlow' => 0,
+            'total_cash_flow' => 0,
+            'coin' => [],
+            'bill' => []
         ];
 
         $listCashFlow = $this->cashFlowRepository->listCashFlows();
 
-        if(empty($listCashFlow)){
-            $data = [
-                'totalCashFlow' => 0,
-                'coin' => [],
-                'bill' => []
-            ];
-        }else{
-            foreach ($listCashFlow as $cashFlow) {
-                $data['totalCashFlow'] += $cashFlow['value'] * $cashFlow['count'];
-                $data[$cashFlow['denomination']][] = ['value' => $cashFlow['value'], 'count' => $cashFlow['count']];
-            }
+        foreach ($listCashFlow as $cashFlow) {
+            $data['total_cash_flow'] += $cashFlow['value'] * $cashFlow['count'];
+            $data[$cashFlow['denomination']][] = ['value' => $cashFlow['value'], 'count' => $cashFlow['count']];
         }
 
         return ['status' => true, 'message' => $data];

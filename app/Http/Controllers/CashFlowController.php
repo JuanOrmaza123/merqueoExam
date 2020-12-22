@@ -51,6 +51,9 @@ class CashFlowController extends Controller
         return response()->json($response['message'], 200);
     }
 
+    /**
+     * @return JsonResponse
+     */
     public function setEmptyFlowCash(): JsonResponse
     {
         $response = $this->flowCashService->setEmptyFlowCash();

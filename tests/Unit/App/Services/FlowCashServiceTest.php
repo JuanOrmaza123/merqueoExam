@@ -113,7 +113,7 @@ class FlowCashServiceTest extends TestCase
             [
                 'status' => true,
                 'message' => [
-                    'totalCashFlow' => 0,
+                    'total_cash_flow' => 0,
                     'coin' => [],
                     'bill' => [],
                 ]

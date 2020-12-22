@@ -16,11 +16,18 @@ interface LogRepositoryInterface
      * @param array|string[] $columns
      * @return array
      */
-    public function listLogs(array $columns = ['*']): Collection;
+    public function listLogs(array $columns = ['*']): array;
 
     /**
      * @param array $data
      * @return Log
      */
     public function createLog(array $data): Log;
+
+    /**
+     * @param string $date
+     * @param array|string[] $columns
+     * @return array
+     */
+    public function getStatusByDate(string $date, array $columns = ['*']): array;
 }

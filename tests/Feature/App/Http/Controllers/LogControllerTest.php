@@ -20,9 +20,9 @@ class LogControllerTest extends TestCase
     /**
      * This test is case getLogs success
      */
-    public function testGetLogsSucess(): void
+    public function testGetLogsSuccess(): void
     {
-        $this->artisan('db:seed --class=PaymentsSeeder');
+        $this->artisan('db:seed --class=CashFlowSeeder');
 
         $response = $this->get(route('log.getLogs'), ['Accept' => 'application/json']);
 
@@ -35,6 +35,33 @@ class LogControllerTest extends TestCase
     public function testGetLogsError(): void
     {
         $response = $this->get(route('log.getLogs'), ['Accept' => 'application/json']);
+
+        $response->assertStatus(500);
+    }
+
+    /**
+     * This case is endpoint get status by date Success
+     */
+    public function testGetStatusByDateSuccess(): void
+    {
+        $this->artisan('db:seed --class=CashFlowSeeder');
+        $bodyContents = file_get_contents(__DIR__ . '/../../../RequestFiles/bodyListLogsByDate.json');
+        $body = json_decode($bodyContents, true);
+
+        $response = $this->post(route('log.getStatusByDate'), $body, ['Accept' => 'application/json']);
+
+        $response->assertStatus(200);
+    }
+
+    /**
+     * This case is endpoint get status by date error
+     */
+    public function testGetStatusByDateError(): void
+    {
+        $bodyContents = file_get_contents(__DIR__ . '/../../../RequestFiles/bodyListLogsByDate.json');
+        $body = json_decode($bodyContents, true);
+
+        $response = $this->post(route('log.getStatusByDate'), $body, ['Accept' => 'application/json']);
 
         $response->assertStatus(500);
     }

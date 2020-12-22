@@ -30,11 +30,21 @@ class LogRepository implements LogRepositoryInterface
      * @param array|string[] $columns
      * @return array
      */
-    public function listLogs(array $columns = ['*']): Collection
+    public function listLogs(array $columns = ['*']): array
     {
-        $logList = $this->log->get($columns);
+        return $this->log->with('cashFlow')->get($columns)->toArray();
+    }
 
-        return $logList;
+    /**
+     * @param string $date
+     * @param array|string[] $columns
+     * @return array
+     */
+    public function getStatusByDate(string $date, array $columns = ['*']): array
+    {
+        $logList = $this->log->where('created_at', '<', $date)->get($columns);
+
+        return (empty($logList)) ? [] : $logList->toArray();
     }
 
     /**

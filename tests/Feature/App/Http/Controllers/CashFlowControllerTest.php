@@ -49,6 +49,33 @@ class CashFlowControllerTest extends TestCase
     }
 
     /**
+     *
+     */
+    public function testCreateBaseCashFlowValidationFields(): void
+    {
+        $response = $this->post(route('cashFlow.create'), [], ['Accept' => 'application/json']);
+
+        $response->assertStatus(422);
+
+        $response->assertJson(
+            [
+                'message' => 'The given data was invalid.',
+                'errors' => [
+                    'denomination' => [
+                        'The denomination field is required.'
+                    ],
+                    'value' => [
+                        'The value field is required.'
+                    ],
+                    'count' => [
+                        'The count field is required.'
+                    ]
+                ]
+            ]
+        );
+    }
+
+    /**
      * This test case error in endpoint load cash flow
      */
     public function testCreateBaseCashFlowError(): void
@@ -71,7 +98,7 @@ class CashFlowControllerTest extends TestCase
      */
     public function testGetStatusFlowCashSuccess(): void
     {
-        $this->artisan('db:seed --class=PaymentsSeeder');
+        $this->artisan('db:seed --class=CashFlowSeeder');
         $response = $this->get(route('cashFlow.getStatus'), ['Accept' => 'application/json']);
         $response->assertStatus(200);
 
@@ -82,7 +109,7 @@ class CashFlowControllerTest extends TestCase
      */
     public function testSetEmptyFlowCashSuccess(): void
     {
-        $this->artisan('db:seed --class=PaymentsSeeder');
+        $this->artisan('db:seed --class=CashFlowSeeder');
 
         $response = $this->get(route('cashFlow.setEmpty'), ['Accept' => 'application/json']);
         $response->assertStatus(200);
